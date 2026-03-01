@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jol/screens/home/event_card.dart';
 import 'package:jol/screens/home/event_list.dart';
 import 'package:jol/main.dart';
@@ -36,11 +38,16 @@ class _HomeState extends State<Home> {
               padding: const EdgeInsets.only(right: 10),
               child: ChoiceChip(
                 showCheckmark: false,
-                label: StyledTitleSmall(
-                  type.name,
-                  color: _selectedType.contains(type)
-                      ? Colors.white
-                      : AppColors.darkColor,
+                label: Text(
+                  type.name.toUpperCase(),
+                  style: GoogleFonts.raleway(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 1,
+                    color: _selectedType.contains(type)
+                        ? Colors.white
+                        : AppColors.darkColor,
+                  ),
                 ),
                 selected: _selectedType.contains(type),
                 onSelected: (_) => setState(() {
@@ -136,7 +143,22 @@ class _HomeState extends State<Home> {
           SliverPadding(
             padding: const EdgeInsets.all(28),
             sliver: SliverToBoxAdapter(
-              child: Text('Aucun événement de ce type'),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  StyledText(
+                    "Il n'y a pas encore d'événement prévu correspondant à votre sélection",
+                    fontSize: 20,
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 34),
+                  SvgPicture.asset(
+                    'assets/empty_states/empty-state.svg',
+                    width: 200,
+                    height: 200,
+                  ),
+                ],
+              ),
             ),
           ),
         );

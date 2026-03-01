@@ -133,15 +133,29 @@ Il en est convaincu.
 Et si le destin lui donnait l’occasion de rejouer ?
 
 Une pièce de Patrick Haudecœur et Gérald Sibleyras
-Mise en scène José Paul
-Avec Guillaume de Tonquédec, Loïc Legendre, Lysiane Meis, Jean Franco, Caroline Maillard
-Décors Édouard Laug
-Costumes Ana Belen Palacios Avila
-Lumière Laurent Béal
-Musique Michel Winogradoff
-Vidéo Sébastien Mizermont
-Accessoiristes Betty Lemoine
-Assistant à la mise en scène Guillaume Rubeaud 
+
+__Mise en scène__  
+José Paul
+
+__Avec__  
+Guillaume de Tonquédec  
+Loïc Legendre  
+Lysiane Meis  
+Jean Franco  
+Caroline Maillard
+
+
+__Décors__  
+Édouard Laug
+
+__Costumes__  
+Ana Belen Palacios Avila
+
+__Lumière__  
+Laurent Béal
+
+__Musique__  
+Michel Winogradoff
     """,
   ),
   Event(
@@ -176,7 +190,7 @@ et pour notre plus grand plaisir, ils ne soient tous obligés de s'associer…
     location: 'Accor Hotel Arena',
     city: 'Paris',
     date: '2026-12-09',
-    id: '5',
+    id: '6',
     pic: 'garou.jpg',
     isHighlighted: true,
     description: """
@@ -190,7 +204,7 @@ avec un spectacle solo mêlant confidences musicales et scénographie captivante
     location: 'Le Cube',
     city: 'Troyes',
     date: '2026-10-04',
-    id: '6',
+    id: '7',
     pic: '80.jpg',
     isHighlighted: false,
     description: """
@@ -208,7 +222,7 @@ où tout a été pensé pour une soirée d'anthologie !
     location: 'Porte d\'Autueuil',
     city: 'Paris',
     date: '2026-06-07',
-    id: '7',
+    id: '8',
     pic: 'roland_garros.jpg',
     isHighlighted: true,
     description: """

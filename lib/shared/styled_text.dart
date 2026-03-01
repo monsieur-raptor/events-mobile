@@ -44,6 +44,7 @@ class AppStyles {
 class StyledText extends StatelessWidget {
   final String text;
   final TextStyle Function(BuildContext) styleBuilder;
+  final TextAlign? textAlign;
 
   // Constructeur standard
   StyledText(
@@ -53,6 +54,7 @@ class StyledText extends StatelessWidget {
     FontWeight? fontWeight,
     double? fontSize,
     double? height,
+    this.textAlign,
   }) : styleBuilder = ((context) => AppStyles.custom(
          context,
          color: color,
@@ -63,11 +65,16 @@ class StyledText extends StatelessWidget {
 
   // Constructeur nommé AppBar
   const StyledText.appBar(this.text, {super.key})
-    : styleBuilder = AppStyles.appBar;
+    : styleBuilder = AppStyles.appBar,
+      textAlign = null;
 
   @override
   Widget build(BuildContext context) {
-    return Text(text, style: styleBuilder(context));
+    return Text(
+      text,
+      style: styleBuilder(context),
+      textAlign: textAlign,
+    );
   }
 }
 
