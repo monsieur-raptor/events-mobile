@@ -27,7 +27,12 @@ ThemeData primaryTheme = ThemeData(
   ),
 
   textTheme: TextTheme(
-    bodyMedium: TextStyle(color: AppColors.textColor, fontSize: 16),
+    bodyMedium: TextStyle(
+      color: AppColors.textColor,
+      fontSize: 16,
+      leadingDistribution: TextLeadingDistribution.even,
+      textBaseline: TextBaseline.alphabetic,
+    ),
 
     bodySmall: TextStyle(
       color: AppColors.textColor,
@@ -36,7 +41,7 @@ ThemeData primaryTheme = ThemeData(
     ),
 
     headlineLarge: TextStyle(
-      color: AppColors.darkColor,
+      color: Colors.black,
       fontSize: 26,
       letterSpacing: 1.25,
       fontWeight: FontWeight.w800,
@@ -51,7 +56,7 @@ ThemeData primaryTheme = ThemeData(
 
     titleSmall: TextStyle(
       color: AppColors.darkColor,
-      fontSize: 14,
+      fontSize: 15,
       letterSpacing: 1.25,
       fontWeight: FontWeight.w800,
     ),

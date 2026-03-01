@@ -2,39 +2,72 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jol/theme.dart';
 
+class AppStyles {
+  // La base commune (Lato + Theme)
+  static TextStyle _baseLato(BuildContext context) {
+    return GoogleFonts.lato(
+      textStyle: Theme.of(context).textTheme.bodyMedium,
+    );
+  }
+
+  static TextStyle appBar(BuildContext context) {
+    return _baseLato(context).copyWith(
+      color: AppColors.darkColor,
+      fontWeight: FontWeight.w500,
+      height: 1,
+      fontSize: 18,
+    );
+  }
+
+  // Markdown
+  static TextStyle body(BuildContext context) {
+    return _baseLato(context).copyWith(height: 1.7, fontSize: 17);
+  }
+
+  // Une méthode flexible pour le style général
+  static TextStyle custom(
+    BuildContext context, {
+    Color? color,
+    FontWeight? fontWeight,
+    double? fontSize,
+    double? height,
+  }) {
+    return _baseLato(context).copyWith(
+      color: color,
+      fontWeight: fontWeight,
+      fontSize: fontSize,
+      height: height,
+    );
+  }
+}
+
 class StyledText extends StatelessWidget {
-  const StyledText(
+  final String text;
+  final TextStyle Function(BuildContext) styleBuilder;
+
+  // Constructeur standard
+  StyledText(
     this.text, {
     super.key,
-    this.color, // Paramètre optionnel pour la couleur
-    this.fontWeight, // Paramètre optionnel pour le gras
-    this.fontSize,
-  });
+    Color? color,
+    FontWeight? fontWeight,
+    double? fontSize,
+    double? height,
+  }) : styleBuilder = ((context) => AppStyles.custom(
+         context,
+         color: color,
+         fontWeight: fontWeight,
+         fontSize: fontSize,
+         height: height,
+       ));
 
-  final String text;
-  final Color? color;
-  final FontWeight? fontWeight;
-  final double? fontSize;
-
-  StyledText.appBar(this.text, {super.key})
-    : color = AppColors.darkColor,
-      fontWeight = FontWeight.w500,
-      fontSize = 18;
+  // Constructeur nommé AppBar
+  const StyledText.appBar(this.text, {super.key})
+    : styleBuilder = AppStyles.appBar;
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style:
-          GoogleFonts.lato(
-            fontWeight: fontWeight,
-            textStyle: Theme.of(context).textTheme.bodyMedium,
-          ).copyWith(
-            color: color,
-            fontWeight: fontWeight,
-            fontSize: fontSize,
-          ),
-    );
+    return Text(text, style: styleBuilder(context));
   }
 }
 

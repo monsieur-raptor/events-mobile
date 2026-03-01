@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:jol/home/event_card.dart';
-import 'package:jol/home/event_list.dart';
+import 'package:jol/screens/home/event_card.dart';
+import 'package:jol/screens/home/event_list.dart';
 import 'package:jol/main.dart';
 import 'package:jol/modules/event.dart';
 import 'package:jol/theme.dart';
@@ -352,6 +352,10 @@ class _HomeState extends State<Home> {
               BottomNavigationBarItem(
                 icon: Icon(Icons.confirmation_num_rounded),
                 label: 'Réservations',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_bag_rounded),
+                label: 'Panier',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.notifications_rounded),

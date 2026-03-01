@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jol/home/home.dart';
+import 'package:jol/screens/event/event_screen.dart';
+import 'package:jol/screens/home/home.dart';
 import 'package:jol/theme.dart';
 import 'package:jol/shared/styled_text.dart';
 import 'package:intl/intl.dart';
@@ -16,7 +17,7 @@ final today = DateTime(now.year, now.month, now.day);
 
 void main() async {
   await initializeDateFormatting('fr_FR', null);
-  runApp(const MaterialApp(home: Home()));
+  runApp(MaterialApp(theme: primaryTheme, home: EventScreen()));
 }
 
 class Sandbox extends StatelessWidget {
